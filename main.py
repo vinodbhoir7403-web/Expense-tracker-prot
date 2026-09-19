@@ -7,14 +7,20 @@ def maininterface():
     print("1. Add Expense")
     print("2. View Expenses")
     print("3. Exit")
-
+    total = 0
     y = input("Choose your next action: ")
 
     if y == '1':
         return add_item()
 
     elif y == '2':
-        print(expenses)
+        print("YOUR EXPENSES ARE\n")
+        for items in expenses:
+            
+            print(expenses[items],items)
+        for i in expenses:
+            total = total + expenses[i]
+        print("TOTAL EXPENSE: ",total)
         return maininterface()
 
     elif y == '3':
